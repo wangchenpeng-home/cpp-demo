@@ -3,13 +3,13 @@ using namespace std;
 #include<list>
 
 /*
-´óĞ¡²Ù×÷
+å¤§å°æ“ä½œ
 size(); empty(); resize(int num);
-resize(int num; elem e);Ö»ÊÇÌî³ä£¬Èç¹ûÔ­ÓĞÊı¾İ²»»á¸²¸Ç
-²åÈëÉ¾³ı
+resize(int num; elem e);åªæ˜¯å¡«å……ï¼Œå¦‚æœåŸæœ‰æ•°æ®ä¸ä¼šè¦†ç›–
+æ’å…¥åˆ é™¤
 insert(pos, elme);
 insert(pos, n, elem);
-insert(pos, begin, end);ÔÚpos²åÈë[begin,end)Çø¼äµÄÊı¾İ
+insert(pos, begin, end);åœ¨posæ’å…¥[begin,end)åŒºé—´çš„æ•°æ®
 push_back();
 push_front();
 pop_back();
@@ -17,19 +17,19 @@ pop_front();
 clear();
 erase(begin, end);
 erase(pos);
-remove(elem);É¾³ıÖµÎªelemµÄÊı¾İ
-Êı¾İ´æÈ¡
+remove(elem);åˆ é™¤å€¼ä¸ºelemçš„æ•°æ®
+æ•°æ®å­˜å–
 front();
 back();
-·´×ªºÍÅÅĞò
-L.reverse();---vectorÖĞÓĞÒ»¸öreserveÔ¤Áô¿Õ¼äµÄ
-L.sort();---Ä¬ÈÏÔöĞò
-½µĞòĞèÒª¶îÍâº¯Êı
+åè½¬å’Œæ’åº
+L.reverse();---vectorä¸­æœ‰ä¸€ä¸ªreserveé¢„ç•™ç©ºé—´çš„
+L.sort();---é»˜è®¤å¢åº
+é™åºéœ€è¦é¢å¤–å‡½æ•°
 bool compare(int a, int b)
 {
     return a > b;
 }
-L.sort(compare);½µĞò
+L.sort(compare);é™åº
 */
 
 void printList(const list<int>& L)
@@ -43,7 +43,7 @@ void printList(const list<int>& L)
 
 void test()
 {
-    //¹¹Ôìº¯Êı
+    //æ„é€ å‡½æ•°
     list<int> L1;
 
     for(int i = 0; i < 10; i++)
@@ -65,10 +65,10 @@ void test()
 
     printList(L4);
 
-    //¸³Öµ
+    //èµ‹å€¼
     L2 = L4;
     printList(L2);
-    //½»»»
+    //äº¤æ¢
     L2.swap(L3);
     printList(L2);
 

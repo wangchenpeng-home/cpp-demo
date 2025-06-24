@@ -67,8 +67,8 @@ int main(void)
     c1.set_MW(2.0);
     c1.set_MH(2.0);
 
-    cout << "c1Ô²µÄÃæ»ý£º " << c1.get_area() << endl;
-    cout << "c1Ô²µÄÌå»ý£º " << c1.get_volume() << endl;
+    cout << "c1åœ†çš„é¢ç§¯ï¼š " << c1.get_area() << endl;
+    cout << "c1åœ†çš„ä½“ç§¯ï¼š " << c1.get_volume() << endl;
 
     Cube c2;
 
@@ -76,13 +76,13 @@ int main(void)
     c2.set_MW(2.0);
     c2.set_MH(2.0);
 
-    cout << "c2Ô²µÄÃæ»ý£º " << c2.get_area() << endl;
-    cout << "c2Ô²µÄÌå»ý£º " << c2.get_volume() << endl;
+    cout << "c2åœ†çš„é¢ç§¯ï¼š " << c2.get_area() << endl;
+    cout << "c2åœ†çš„ä½“ç§¯ï¼š " << c2.get_volume() << endl;
 
     if(c1.IsEqual(c2))
-        cout << "Á©Ô²Ò»Ñù\n";
+        cout << "ä¿©åœ†ä¸€æ ·\n";
     else
-        cout << "Á©Ô²²»µÈ\n";
+        cout << "ä¿©åœ†ä¸ç­‰\n";
 
     return 0;
 }

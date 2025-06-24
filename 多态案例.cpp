@@ -33,7 +33,7 @@ void test01()
     cout << c.m_num1 << " - " << c.m_num2 << " = " << c.result("-") << endl;
 }
 
-//利用多态实现计算器
+//鍒╃敤澶氭�佸疄鐜拌绠楀櫒
 class AbstractCalculator
 {
 public:

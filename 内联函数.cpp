@@ -4,23 +4,23 @@ using namespace std;
 #include<functional>
 #include<algorithm>
 /*
-* `template<class T> T plus<T>`          //¼Ó·¨·Âº¯Êı
-* `template<class T> T minus<T>`         //¼õ·¨·Âº¯Êı
-* `template<class T> T multiplies<T>`    //³Ë·¨·Âº¯Êı
-* `template<class T> T divides<T>`       //³ı·¨·Âº¯Êı
-* `template<class T> T modulus<T>`       //È¡Ä£·Âº¯Êı
-* `template<class T> T negate<T>`        //È¡·´·Âº¯Êı
+* `template<class T> T plus<T>`          //åŠ æ³•ä»¿å‡½æ•°
+* `template<class T> T minus<T>`         //å‡æ³•ä»¿å‡½æ•°
+* `template<class T> T multiplies<T>`    //ä¹˜æ³•ä»¿å‡½æ•°
+* `template<class T> T divides<T>`       //é™¤æ³•ä»¿å‡½æ•°
+* `template<class T> T modulus<T>`       //å–æ¨¡ä»¿å‡½æ•°
+* `template<class T> T negate<T>`        //å–åä»¿å‡½æ•°
 
-* `template<class T> bool equal_to<T>`       //µÈÓÚ
-* `template<class T> bool not_equal_to<T>`   //²»µÈÓÚ
-* `template<class T> bool greater<T>`        //´óÓÚ
-* `template<class T> bool greater_equal<T>`  //´óÓÚµÈÓÚ
-* `template<class T> bool less<T>`           //Ğ¡ÓÚ
-* `template<class T> bool less_equal<T>`     //Ğ¡ÓÚµÈÓÚ
+* `template<class T> bool equal_to<T>`       //ç­‰äº
+* `template<class T> bool not_equal_to<T>`   //ä¸ç­‰äº
+* `template<class T> bool greater<T>`        //å¤§äº
+* `template<class T> bool greater_equal<T>`  //å¤§äºç­‰äº
+* `template<class T> bool less<T>`           //å°äº
+* `template<class T> bool less_equal<T>`     //å°äºç­‰äº
 
-* `template<class T> bool logical_and<T>`    //Âß¼­Óë
-* `template<class T> bool logical_or<T>`     //Âß¼­»ò
-* `template<class T> bool logical_not<T>`    //Âß¼­·Ç
+* `template<class T> bool logical_and<T>`    //é€»è¾‘ä¸
+* `template<class T> bool logical_or<T>`     //é€»è¾‘æˆ–
+* `template<class T> bool logical_not<T>`    //é€»è¾‘é
 */
 
 void test()

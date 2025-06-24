@@ -1,4 +1,4 @@
-//ÎåÃûÑ¡ÊÖABCDE£¬Ê®ÃûÆÀÎ¯´ò·Ö£¬È¥µô×î¸ß·ÖºÍ×îµÍ·ÖÈ¡Æ½¾ù·Ö
+//äº”åé€‰æ‰‹ABCDEï¼Œååè¯„å§”æ‰“åˆ†ï¼Œå»æ‰æœ€é«˜åˆ†å’Œæœ€ä½åˆ†å–å¹³å‡åˆ†
 #include<iostream>
 using namespace std;
 #include<vector>
@@ -24,7 +24,7 @@ void createPerson(vector<Person> &v)
     const string contestant = "ABCDE";
     for(int i = 0; i < 5; i++)
     {
-        string name = "Ñ¡ÊÖ";
+        string name = "é€‰æ‰‹";
         name += contestant[i];
         Person p(name, score);
 
@@ -38,7 +38,7 @@ void score(deque<int> &d, vector<Person> &v)
     for(int i = 0; i < 5; i++)
     {
         int average = 0;
-        cout << "Çë¸ø"<< v[i].m_name <<"´ò·Ö£º" << endl;
+        cout << "è¯·ç»™"<< v[i].m_name <<"æ‰“åˆ†ï¼š" << endl;
         for(int j = 0; j < 10; j++)
         {
             cin >> to_score;
@@ -63,7 +63,7 @@ void printScore(vector<Person> &v)
 {
     for(int i = 0; i < 5; i++)
     {
-        cout << v[i].m_name << "µÄ×îÖÕµÃ·ÖÊÇ£º" << v[i].m_score << endl;
+        cout << v[i].m_name << "çš„æœ€ç»ˆå¾—åˆ†æ˜¯ï¼š" << v[i].m_score << endl;
     }
 }
 

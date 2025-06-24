@@ -1,26 +1,26 @@
 #include<iostream>
 using namespace std;
-//stack--ÏÈ½øºó³ö
+//stack--å…ˆè¿›åå‡º
 #include<stack>
 
 /*
-¹¹Ôìº¯Êı
+æ„é€ å‡½æ•°
 stack<T> T;
 stack<T> T1(T);
-¸³Öµ
+èµ‹å€¼
 T1 = T;
-Êı¾İ´æÈ¡
+æ•°æ®å­˜å–
 pop();
 push();
-top();Õ»¶¥
-´óĞ¡²Ù×÷
+top();æ ˆé¡¶
+å¤§å°æ“ä½œ
 empty();
 size();
 */
 
 /*
-¶ÓÁĞqueue--ÏÈ½øÏÈ³ö
-²Ù×÷¶¼Ò»ÑùÖ»ÓĞ´æÈ¡Ê±ÎŞtop()£¬ µ«ÊÇÓĞback(), front();
+é˜Ÿåˆ—queue--å…ˆè¿›å…ˆå‡º
+æ“ä½œéƒ½ä¸€æ ·åªæœ‰å­˜å–æ—¶æ— top()ï¼Œ ä½†æ˜¯æœ‰back(), front();
 */
 void test()
 {
@@ -29,16 +29,16 @@ void test()
     {
         S.push(i);
     }
-    cout << "Õ»µÄ´óĞ¡£º" << S.size() << endl;
+    cout << "æ ˆçš„å¤§å°ï¼š" << S.size() << endl;
 
     while(!S.empty())
     {
-        cout << "Õ»¶¥ÔªËØ£º" << S.top() << endl;
+        cout << "æ ˆé¡¶å…ƒç´ ï¼š" << S.top() << endl;
 
-        cout << "³öÕ»\n";
+        cout << "å‡ºæ ˆ\n";
         S.pop();
 
-        cout << "Õ»µÄ´óĞ¡£º" << S.size() << endl;
+        cout << "æ ˆçš„å¤§å°ï¼š" << S.size() << endl;
     }
 }
 

@@ -5,43 +5,43 @@ using namespace std;
 class Person
 {
 public:
-    //¹¹Ôìº¯Êý
+    //æž„é€ å‡½æ•°
     Person()
     {
-        cout << "PersonµÄÎÞ²ÎÊý¹¹Ôìº¯Êýµ÷ÓÃ\n";
+        cout << "Personçš„æ— å‚æ•°æž„é€ å‡½æ•°è°ƒç”¨\n";
     }
     Person(int a)
     {
         age = a;
-        cout << "PersonµÄÓÐ²ÎÊý¹¹Ôìº¯Êýµ÷ÓÃ\n";
+        cout << "Personçš„æœ‰å‚æ•°æž„é€ å‡½æ•°è°ƒç”¨\n";
     }
 
-    //¿½±´¹¹Ôìº¯Êý
+    //æ‹·è´æž„é€ å‡½æ•°
     Person(const Person &p)
     {
-        cout << "PersonµÄ¿½±´¹¹Ôìº¯Êýµ÷ÓÃ\n";
-        //½«´«ÈëµÄ²ÎÊý¿½±´Ò»¹þ
+        cout << "Personçš„æ‹·è´æž„é€ å‡½æ•°è°ƒç”¨\n";
+        //å°†ä¼ å…¥çš„å‚æ•°æ‹·è´ä¸€å“ˆ
         age = p.age;
     }
 
     ~Person()
     {
-        cout << "PersonµÄÎö¹¹º¯Êýµ÷ÓÃ\n";
+        cout << "Personçš„æžæž„å‡½æ•°è°ƒç”¨\n";
     }
     int age;
 };
 
 void text01()
 {
-    //1.À¨ºÅ·¨
+    //1.æ‹¬å·æ³•
     Person p1;
     Person p2(10);
     Person p3(p2);
-    //2.ÏÔÊ¾·¨
+    //2.æ˜¾ç¤ºæ³•
     Person p4;
     Person p5 = Person(10);
-    Person p6 = Person(p5);//ÄäÃû¶ÔÏó»á±»Ê¹ÓÃÍêºó»ØÊÕ,²»ÊÇ³ÌÐò½áÊøºó²ÅÎö¹¹
-    //3.ÒþÊ½×ª»»·¨
+    Person p6 = Person(p5);//åŒ¿åå¯¹è±¡ä¼šè¢«ä½¿ç”¨å®ŒåŽå›žæ”¶,ä¸æ˜¯ç¨‹åºç»“æŸåŽæ‰æžæž„
+    //3.éšå¼è½¬æ¢æ³•
     Person p7 = 10;
     Person p8 = p7;
 }

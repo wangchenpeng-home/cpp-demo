@@ -1,4 +1,4 @@
-//×Ô¼ºµÄÍ¨ÓÃÊı×éÀàÄ£°å
+//è‡ªå·±çš„é€šç”¨æ•°ç»„ç±»æ¨¡æ¿
 #pragma
 #include<iostream>
 using namespace std;
@@ -8,7 +8,7 @@ template <class T>
 class myArray
 {
 public:
-    //ÓĞ²Î¹¹Ôì
+    //æœ‰å‚æ„é€ 
     myArray(int capacity)
     {
         arryCapacity = capacity;
@@ -16,12 +16,12 @@ public:
         pAddress = new T[arryCapacity];
     }
 
-    //¿½±´¹¹Ôì
+    //æ‹·è´æ„é€ 
     myArray(const myArray& arr)
     {
         arryCapacity = arr.arryCapacity;
         arrySize = arr.arrySize;
-        //pAddress = arr.pAddress; ²»ÄÜÕâÃ´Ğ´£¬·ñÔò»áµ¼ÖÂÖØ¸´ÊÍ·Å
+        //pAddress = arr.pAddress; ä¸èƒ½è¿™ä¹ˆå†™ï¼Œå¦åˆ™ä¼šå¯¼è‡´é‡å¤é‡Šæ”¾
 
         pAddress = new T[arryCapacity];
 
@@ -31,10 +31,10 @@ public:
         }
     }
 
-    //operator=·ÀÖ¹Ç³¿½±´
+    //operator=é˜²æ­¢æµ…æ‹·è´
     myArray& operator= (const myArray & arr)
     {
-        //ÏÈÅĞ¶ÏÊÇ·ñ¶ÑÖĞÓĞÊı¾İ
+        //å…ˆåˆ¤æ–­æ˜¯å¦å †ä¸­æœ‰æ•°æ®
         if(pAddress != NULL)
         {
             delete[] pAddress;
@@ -43,7 +43,7 @@ public:
             arrySize = 0;
         }
 
-        //Éî¿½±´
+        //æ·±æ‹·è´
         arryCapacity = arr.arrCapacity;
         arrySize = arr.arrSize;
         pAddress = new T[arryCapacity];
@@ -56,12 +56,12 @@ public:
         return *this;
     }
 
-    //Î²²å·¨
+    //å°¾æ’æ³•
     void Push_Back(const T & val)
     {
         if(arrySize == arryCapacity)
         {
-            cout << "ÈİÁ¿²»×ã" << endl;
+            cout << "å®¹é‡ä¸è¶³" << endl;
             return;
         }
 
@@ -69,7 +69,7 @@ public:
         arrySize++;
     }
 
-    //Î²É¾·¨
+    //å°¾åˆ æ³•
     void Pop_Back()
     {
         if(arrySize == 0)
@@ -79,13 +79,13 @@ public:
         arrySize--;
     }
 
-    //Í¨¹ıÏÂ±ê·ÃÎÊÔªËØ£¬ĞèÒª³å²Ã[]  arr[0] = 100;ËùÒÔĞèÒªÒıÓÃ
+    //é€šè¿‡ä¸‹æ ‡è®¿é—®å…ƒç´ ï¼Œéœ€è¦å†²è£[]  arr[0] = 100;æ‰€ä»¥éœ€è¦å¼•ç”¨
     T& operator[] (int index)
     {
         return pAddress[index];
     }
 
-    //·µ»ØÈİÁ¿ºÍ´óĞ¡
+    //è¿”å›å®¹é‡å’Œå¤§å°
     int getCapacity()
     {
         return arryCapacity;
@@ -96,7 +96,7 @@ public:
     }
 
 
-    //Îö¹¹º¯Êı
+    //ææ„å‡½æ•°
     ~myArray()
     {
         if(pAddress != NULL)
@@ -107,9 +107,9 @@ public:
     }
 
 private:
-    T * pAddress; // Ö¸ÕëÖ¸Ïò¶ÑÇø¿ª±ÙµÄÕæÊµµÄÊı×é
+    T * pAddress; // æŒ‡é’ˆæŒ‡å‘å †åŒºå¼€è¾Ÿçš„çœŸå®çš„æ•°ç»„
 
-    int arryCapacity;//ÈİÁ¿
+    int arryCapacity;//å®¹é‡
 
-    int arrySize;//´óĞ¡
+    int arrySize;//å¤§å°
 };

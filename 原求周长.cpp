@@ -7,12 +7,12 @@ using namespace std;
 class Circle
 {
 public:
-    //ÊôĞÔ
-    //°ë¾¶
+    //å±æ€§
+    //åŠå¾„
     int cir_r;
 
-    //ĞĞÎª
-    //»ñÈ¡ÖÜ³¤
+    //è¡Œä¸º
+    //è·å–å‘¨é•¿
     double circle_perimeter();
 };
 

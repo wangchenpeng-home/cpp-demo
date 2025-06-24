@@ -13,37 +13,37 @@ public:
 
 void test01()
 {
-    //´´½¨Á÷¶ÔÏó
+    //åˆ›å»ºæµå¯¹è±¡
     ofstream ofs;
 
-    //´ò¿ªÎÄ¼ş
-    ofs.open("¶ş½øÖÆ¶ÁĞ´.txt", ios::binary | ios::out);
-    //ºÏ¶şÎªÒ»,Ö±½Ó´´½¨¼Ó´ò¿ª
-    //ofstream ofs("¶ş½øÖÆ¶ÁĞ´.txt", ios::binary | ios::out);
+    //æ‰“å¼€æ–‡ä»¶
+    ofs.open("äºŒè¿›åˆ¶è¯»å†™.txt", ios::binary | ios::out);
+    //åˆäºŒä¸ºä¸€,ç›´æ¥åˆ›å»ºåŠ æ‰“å¼€
+    //ofstream ofs("äºŒè¿›åˆ¶è¯»å†™.txt", ios::binary | ios::out);
 
-    //¶ÁĞ´ÎÄ¼ş
-    //Ğ´ÎÄ¼ş
-    Person p = {"ÕÅÈı", 18};
-    ofs.write((const char *)&p , sizeof(Person));//Ç¿ÖÆ×ª»»³Éconst char *
+    //è¯»å†™æ–‡ä»¶
+    //å†™æ–‡ä»¶
+    Person p = {"å¼ ä¸‰", 18};
+    ofs.write((const char *)&p , sizeof(Person));//å¼ºåˆ¶è½¬æ¢æˆconst char *
 
-    //¹Ø±ÕÎÄ¼ş
+    //å…³é—­æ–‡ä»¶
     ofs.close();
 }
 void test02()
 {
-    ifstream ifs("¶ş½øÖÆ¶ÁĞ´.txt", ios::in | ios::binary);
+    ifstream ifs("äºŒè¿›åˆ¶è¯»å†™.txt", ios::in | ios::binary);
 
     if(!ifs.is_open())
     {
-        cout << "ÎÄ¼ş´ò¿ªÊ§°Ü£¡\n";
+        cout << "æ–‡ä»¶æ‰“å¼€å¤±è´¥ï¼\n";
         ifs.close();
         return;
     }
 
     Person p;
     ifs.read((char *)&p, sizeof(Person));
-    cout << "ĞÕÃû£º " << p.m_Name << endl;
-    cout << "ÄêÁä£º " << p.m_Age << endl;
+    cout << "å§“åï¼š " << p.m_Name << endl;
+    cout << "å¹´é¾„ï¼š " << p.m_Age << endl;
 
     ifs.close();
 }

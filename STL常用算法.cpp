@@ -3,77 +3,77 @@ using namespace std;
 #include<algorithm>
 #include<vector>
 /*
-*³£ÓÃ±éÀúËã·¨
-for_each     //±éÀúÈİÆ÷
+*å¸¸ç”¨éå†ç®—æ³•
+for_each     //éå†å®¹å™¨
 for_each(iterator beg, iterator end, _func);
-//_func º¯Êı»òÕßº¯Êı¶ÔÏó
+//_func å‡½æ•°æˆ–è€…å‡½æ•°å¯¹è±¡
 
-transform  //°áÔËÈİÆ÷µ½ÁíÒ»¸öÈİÆ÷ÖĞ
+transform  //æ¬è¿å®¹å™¨åˆ°å¦ä¸€ä¸ªå®¹å™¨ä¸­
 transform(iterator beg1, iterator end1, iterator beg2, _func);
 
-*³£ÓÃ²éÕÒËã·¨
-find                   //²éÕÒÔªËØ
+*å¸¸ç”¨æŸ¥æ‰¾ç®—æ³•
+find                   //æŸ¥æ‰¾å…ƒç´ 
 find(iterator beg, iterator end, value);
 
-find_if             //°´Ìõ¼ş²éÕÒÔªËØ
+find_if             //æŒ‰æ¡ä»¶æŸ¥æ‰¾å…ƒç´ 
 find_if(iterator beg, iterator end, _Pred);
-// _Pred º¯Êı»òÕßÎ½´Ê£¨·µ»ØboolÀàĞÍµÄ·Âº¯Êı£©
+// _Pred å‡½æ•°æˆ–è€…è°“è¯ï¼ˆè¿”å›boolç±»å‹çš„ä»¿å‡½æ•°ï¼‰
 
-adjacent_find   //²éÕÒÏàÁÚÖØ¸´ÔªËØ
+adjacent_find   //æŸ¥æ‰¾ç›¸é‚»é‡å¤å…ƒç´ 
 adjacent_find(iterator beg, iterator end);
 
-binary_search    //¶ş·Ö²éÕÒ·¨
+binary_search    //äºŒåˆ†æŸ¥æ‰¾æ³•
 bool binary_search(iterator beg, iterator end, value);
 
-count                   //Í³¼ÆÔªËØ¸öÊı
+count                   //ç»Ÿè®¡å…ƒç´ ä¸ªæ•°
 count(iterator beg, iterator end, value);
 
-count_if           //°´Ìõ¼şÍ³¼ÆÔªËØ¸öÊı
+count_if           //æŒ‰æ¡ä»¶ç»Ÿè®¡å…ƒç´ ä¸ªæ•°
 count_if(iterator beg, iterator end, _Pred);
 
-*³£ÓÃÅÅĞòËã·¨
-sort           //¶ÔÈİÆ÷ÄÚÔªËØ½øĞĞÅÅĞò
+*å¸¸ç”¨æ’åºç®—æ³•
+sort           //å¯¹å®¹å™¨å†…å…ƒç´ è¿›è¡Œæ’åº
 sort(iterator beg, iterator end, _Pred);
 
-random_shuffle //Ï´ÅÆ   Ö¸¶¨·¶Î§ÄÚµÄÔªËØËæ»úµ÷Õû´ÎĞò
+random_shuffle //æ´—ç‰Œ   æŒ‡å®šèŒƒå›´å†…çš„å…ƒç´ éšæœºè°ƒæ•´æ¬¡åº
 random_shuffle(iterator beg, iterator end);
 
-merge          // ÈİÆ÷ÔªËØºÏ²¢£¬²¢´æ´¢µ½ÁíÒ»ÈİÆ÷ÖĞ
+merge          // å®¹å™¨å…ƒç´ åˆå¹¶ï¼Œå¹¶å­˜å‚¨åˆ°å¦ä¸€å®¹å™¨ä¸­
 merge(iterator beg1, iterator end1, iterator beg2, iterator end2, iterator dest);
 
-reverse        // ·´×ªÖ¸¶¨·¶Î§µÄÔªËØ
+reverse        // åè½¬æŒ‡å®šèŒƒå›´çš„å…ƒç´ 
 reverse(iterator beg, iterator end);
 
-*³£ÓÃ¿½±´ºÍÌæ»»Ëã·¨
-copy                    // ÈİÆ÷ÄÚÖ¸¶¨·¶Î§µÄÔªËØ¿½±´µ½ÁíÒ»ÈİÆ÷ÖĞ
+*å¸¸ç”¨æ‹·è´å’Œæ›¿æ¢ç®—æ³•
+copy                    // å®¹å™¨å†…æŒ‡å®šèŒƒå›´çš„å…ƒç´ æ‹·è´åˆ°å¦ä¸€å®¹å™¨ä¸­
 copy(iterator beg, iterator end, iterator dest);
 
-replace               // ½«ÈİÆ÷ÄÚÖ¸¶¨·¶Î§µÄ¾ÉÔªËØĞŞ¸ÄÎªĞÂÔªËØ
+replace               // å°†å®¹å™¨å†…æŒ‡å®šèŒƒå›´çš„æ—§å…ƒç´ ä¿®æ”¹ä¸ºæ–°å…ƒç´ 
 replace(iterator beg, iterator end, oldvalue, newvalue);
 
-replace_if          // ÈİÆ÷ÄÚÖ¸¶¨·¶Î§Âú×ãÌõ¼şµÄÔªËØÌæ»»ÎªĞÂÔªËØ
+replace_if          // å®¹å™¨å†…æŒ‡å®šèŒƒå›´æ»¡è¶³æ¡ä»¶çš„å…ƒç´ æ›¿æ¢ä¸ºæ–°å…ƒç´ 
 replace_if(iterator beg, iterator end, _pred, newvalue);
 
-swap                    // »¥»»Á½¸öÈİÆ÷µÄÔªËØ
+swap                    // äº’æ¢ä¸¤ä¸ªå®¹å™¨çš„å…ƒç´ 
 swap(container c1, container c2);
 
-*³£ÓÃËãÊõÉú³ÉËã·¨
-accumulate     // ¼ÆËãÈİÆ÷ÔªËØÀÛ¼Æ×ÜºÍ
+*å¸¸ç”¨ç®—æœ¯ç”Ÿæˆç®—æ³•
+accumulate     // è®¡ç®—å®¹å™¨å…ƒç´ ç´¯è®¡æ€»å’Œ
 accumulate(iterator beg, iterator end, value);
-//accumulateÊ¹ÓÃÊ±Í·ÎÄ¼ş×¢ÒâÊÇ numeric£¬Õâ¸öËã·¨ºÜÊµÓÃ
+//accumulateä½¿ç”¨æ—¶å¤´æ–‡ä»¶æ³¨æ„æ˜¯ numericï¼Œè¿™ä¸ªç®—æ³•å¾ˆå®ç”¨
 
-fill                 // ÏòÈİÆ÷ÖĞÌî³äÖ¸¶¨µÄÔªËØ
+fill                 // å‘å®¹å™¨ä¸­å¡«å……æŒ‡å®šçš„å…ƒç´ 
 fill(iterator beg, iterator end, value);
 
-*³£ÓÃ¼¯ºÏËã·¨
-set_intersection          // ÇóÁ½¸öÈİÆ÷µÄ½»¼¯
+*å¸¸ç”¨é›†åˆç®—æ³•
+set_intersection          // æ±‚ä¸¤ä¸ªå®¹å™¨çš„äº¤é›†
 set_intersection(iterator beg1, iterator end1, iterator beg2, iterator end2, iterator dest);
-//dest  ĞÂÈİÆ÷
+//dest  æ–°å®¹å™¨
 
-set_union                      // ÇóÁ½¸öÈİÆ÷µÄ²¢¼¯
+set_union                      // æ±‚ä¸¤ä¸ªå®¹å™¨çš„å¹¶é›†
 set_union(iterator beg1, iterator end1, iterator beg2, iterator end2, iterator dest);
 
-set_difference              // ÇóÁ½¸öÈİÆ÷µÄ²î¼¯
+set_difference              // æ±‚ä¸¤ä¸ªå®¹å™¨çš„å·®é›†
 set_difference(iterator beg1, iterator end1, iterator beg2, iterator end2, iterator dest);
 */
 
@@ -96,18 +96,18 @@ void test()
 	}
 
 	vector<int> vTarget;
-	//È¡Á½¸öÀïÃæ½Ï´óµÄÖµ¸øÄ¿±êÈİÆ÷¿ª±Ù¿Õ¼ä
+	//å–ä¸¤ä¸ªé‡Œé¢è¾ƒå¤§çš„å€¼ç»™ç›®æ ‡å®¹å™¨å¼€è¾Ÿç©ºé—´
 	vTarget.resize( max(v1.size() , v2.size()));
 
-	//·µ»ØÄ¿±êÈİÆ÷µÄ×îºóÒ»¸öÔªËØµÄµü´úÆ÷µØÖ·
-	cout << "v1Óëv2µÄ²î¼¯Îª£º " << endl;
+	//è¿”å›ç›®æ ‡å®¹å™¨çš„æœ€åä¸€ä¸ªå…ƒç´ çš„è¿­ä»£å™¨åœ°å€
+	cout << "v1ä¸v2çš„å·®é›†ä¸ºï¼š " << endl;
 	vector<int>::iterator itEnd =
         set_difference(v1.begin(), v1.end(), v2.begin(), v2.end(), vTarget.begin());
 	for_each(vTarget.begin(), itEnd, myPrint());
 	cout << endl;
 
 
-	cout << "v2Óëv1µÄ²î¼¯Îª£º " << endl;
+	cout << "v2ä¸v1çš„å·®é›†ä¸ºï¼š " << endl;
 	itEnd = set_difference(v2.begin(), v2.end(), v1.begin(), v1.end(), vTarget.begin());
 	for_each(vTarget.begin(), itEnd, myPrint());
 	cout << endl;

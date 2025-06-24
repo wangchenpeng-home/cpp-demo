@@ -5,19 +5,19 @@ class AbstractDrink
 {
 public:
 
-    //ÖóË®
+    //ç…®æ°´
     virtual void boil() = 0;
 
-    //³åÅİ
+    //å†²æ³¡
     virtual void brew() = 0;
 
-    //µ¹²è
+    //å€’èŒ¶
     virtual void pourincup() = 0;
 
-    //¼ÓÈë¸¨ÁÏ
+    //åŠ å…¥è¾…æ–™
     virtual void putsomething() = 0;
 
-    //ÖÆ×÷ÒûÆ·
+    //åˆ¶ä½œé¥®å“
     void makedrink()
     {
         boil();
@@ -30,28 +30,28 @@ public:
 class Coffee:public AbstractDrink
 {
 public:
-     //ÖóË®
+     //ç…®æ°´
     virtual void boil()
     {
-        cout << "Öó¿§·È\n";
+        cout << "ç…®å’–å•¡\n";
     }
 
-    //³åÅİ
+    //å†²æ³¡
     virtual void brew()
     {
-        cout << "³å¿§·È\n";
+        cout << "å†²å’–å•¡\n";
     }
 
-    //µ¹²è
+    //å€’èŒ¶
     virtual void pourincup()
     {
-        cout << "µ¹¿§·È\n";
+        cout << "å€’å’–å•¡\n";
     }
 
-    //¼ÓÈë¸¨ÁÏ
+    //åŠ å…¥è¾…æ–™
     virtual void putsomething()
     {
-        cout << "¼ÓÈëÅ£ÄÌºÍÌÇ\n";
+        cout << "åŠ å…¥ç‰›å¥¶å’Œç³–\n";
     }
 
 };
@@ -59,28 +59,28 @@ public:
 class Tea:public AbstractDrink
 {
 public:
-     //ÖóË®
+     //ç…®æ°´
     virtual void boil()
     {
-        cout << "Öó²èÒ¶\n";
+        cout << "ç…®èŒ¶å¶\n";
     }
 
-    //³åÅİ
+    //å†²æ³¡
     virtual void brew()
     {
-        cout << "³å²èÒ¶\n";
+        cout << "å†²èŒ¶å¶\n";
     }
 
-    //µ¹²è
+    //å€’èŒ¶
     virtual void pourincup()
     {
-        cout << "µ¹²èÒ¶\n";
+        cout << "å€’èŒ¶å¶\n";
     }
 
-    //¼ÓÈë¸¨ÁÏ
+    //åŠ å…¥è¾…æ–™
     virtual void putsomething()
     {
-        cout << "¼ÓÈëÆäËû\n";
+        cout << "åŠ å…¥å…¶ä»–\n";
     }
 
 };
@@ -92,15 +92,15 @@ void dowork(AbstractDrink &abc)
 
 void test01()
 {
-    //×ö¿§·È
+    //åšå’–å•¡
     Coffee coffee;
     dowork(coffee);
-    cout << "¿§·È×öºÃÁË!\n\n";
+    cout << "å’–å•¡åšå¥½äº†!\n\n";
 
-    //×ö²è
+    //åšèŒ¶
     Tea tea;
     dowork(tea);
-    cout << "²è×öºÃÁË!\n";
+    cout << "èŒ¶åšå¥½äº†!\n";
 }
 
 int main(void)

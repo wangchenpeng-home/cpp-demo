@@ -1,11 +1,11 @@
 /*
-ÈİÆ÷£º     vector
-Ëã·¨£º     for_each
-µü´úÆ÷:    vector<int>::iterator
+å®¹å™¨ï¼š     vector
+ç®—æ³•ï¼š     for_each
+è¿­ä»£å™¨:    vector<int>::iterator
 */
 
 /*
-vectorµÄ¹¹Ôìº¯Êı
+vectorçš„æ„é€ å‡½æ•°
     vector<T> v1;
 
     vector<T> v2(v1.begin(), v1.end());
@@ -13,7 +13,7 @@ vectorµÄ¹¹Ôìº¯Êı
     vector<T> v3(10, 100);
 
     vector<T> v4(v3);
-vectorµÄ¸³Öµ²Ù×÷
+vectorçš„èµ‹å€¼æ“ä½œ
     vector<T> v1;
     Vector<T> v2 = v1;
 
@@ -22,31 +22,31 @@ vectorµÄ¸³Öµ²Ù×÷
 
     vector<T> v4;
     v4.assign(10, 100);
-vectorµÄÈİÁ¿ºÍ´óĞ¡
-    v1.empty();//ÅĞ¿Õ
-    v1.capacity();//ÈİÁ¿
-    v1.size();//´óĞ¡
-    v1.resize(int n);//Ö¸¶¨ÈİÆ÷³¤¶ÈÎ»num
+vectorçš„å®¹é‡å’Œå¤§å°
+    v1.empty();//åˆ¤ç©º
+    v1.capacity();//å®¹é‡
+    v1.size();//å¤§å°
+    v1.resize(int n);//æŒ‡å®šå®¹å™¨é•¿åº¦ä½num
     v1.resize(int num, elem);
-vectorµÄ²åÈëÉ¾³ı
-    v1.push_back(elem);//ºó²å·¨
-    v1.pop_back();//É¾³ı×îºóÒ»¸öÊı
-    v1.insert(const_iterator pos, elem);//pos³ö²åÈëelem.
-    v1.insert(const_iterator pos, int num, elem);//²åÈënum¸öelem
-    v1.erase(const_iterator pos);//É¾³ıpos´¦µÄÔªËØ
-    v1.erase(const_iterator start, const_iterator end);//É¾³ıÕâ¸öÇø¼äµÄÔªËØ
-    v1.clear();//Çå¿Õ
-vectorµÄÊı¾İ´æÈ¡
+vectorçš„æ’å…¥åˆ é™¤
+    v1.push_back(elem);//åæ’æ³•
+    v1.pop_back();//åˆ é™¤æœ€åä¸€ä¸ªæ•°
+    v1.insert(const_iterator pos, elem);//poså‡ºæ’å…¥elem.
+    v1.insert(const_iterator pos, int num, elem);//æ’å…¥numä¸ªelem
+    v1.erase(const_iterator pos);//åˆ é™¤poså¤„çš„å…ƒç´ 
+    v1.erase(const_iterator start, const_iterator end);//åˆ é™¤è¿™ä¸ªåŒºé—´çš„å…ƒç´ 
+    v1.clear();//æ¸…ç©º
+vectorçš„æ•°æ®å­˜å–
     v1[i];
     v1.at(i);
-    v1.front();//µÚÒ»¸öÔªËØ
-    v1.back();//×îºóÒ»¸öÔªËØ
+    v1.front();//ç¬¬ä¸€ä¸ªå…ƒç´ 
+    v1.back();//æœ€åä¸€ä¸ªå…ƒç´ 
     for_each(v.begin(), v.end(), myprint);
-vectorµÄÈİÆ÷»¥»»
+vectorçš„å®¹å™¨äº’æ¢
     v1.swap(v2);
-    vector<T>(v1).swap(v1);//ÇÉÓÃÊÕËõÈİÁ¿´óĞ¡,µ±´óĞ¡Ô¶Ğ¡ÓÚÈİÁ¿Ê±Ê¹ÓÃ
-    vector<T>(v1);//´ú±íÄäÃû¿½±´¶ÔÏó£¬ÎŞÃû
-vectorµÄÔ¤´æÈİÁ¿,¼õÉÙÆäÀ©³ä´ÎÊı
+    vector<T>(v1).swap(v1);//å·§ç”¨æ”¶ç¼©å®¹é‡å¤§å°,å½“å¤§å°è¿œå°äºå®¹é‡æ—¶ä½¿ç”¨
+    vector<T>(v1);//ä»£è¡¨åŒ¿åæ‹·è´å¯¹è±¡ï¼Œæ— å
+vectorçš„é¢„å­˜å®¹é‡,å‡å°‘å…¶æ‰©å……æ¬¡æ•°
     v1.reserve(1000);
 */
 #include<iostream>
@@ -75,17 +75,17 @@ void test01()
 {
     vector<int> v;
 
-    //ÏñÈİÆ÷ÖĞ²åÈëÊı¾İ
+    //åƒå®¹å™¨ä¸­æ’å…¥æ•°æ®
     v.push_back(10);
     v.push_back(20);
     v.push_back(30);
     v.push_back(40);
 /*
-    //Í¨¹ıµü´úÆ÷·ÃÎÊÆäÖĞÊı¾İ
-    vector<int>::iterator itBegin = v.begin();//ÆğÊ¼µü´úÆ÷
-    vector<int>::iterator itEnd = v.end();//½áÊøµü´úÆ÷£¬Ö»Ïë×îºóÒ»¸öÔªËØµÄÏÂÒ»¸öÎ»ÖÃ
+    //é€šè¿‡è¿­ä»£å™¨è®¿é—®å…¶ä¸­æ•°æ®
+    vector<int>::iterator itBegin = v.begin();//èµ·å§‹è¿­ä»£å™¨
+    vector<int>::iterator itEnd = v.end();//ç»“æŸè¿­ä»£å™¨ï¼Œåªæƒ³æœ€åä¸€ä¸ªå…ƒç´ çš„ä¸‹ä¸€ä¸ªä½ç½®
 
-    //µÚÒ»ÖÖ±éÀú·½Ê½
+    //ç¬¬ä¸€ç§éå†æ–¹å¼
     while(itBegin != itEnd)
     {
         cout << *itBegin << endl;
@@ -93,13 +93,13 @@ void test01()
     }
     */
     /*
-    //µÚ¶şÖÖ±éÀú·½Ê½
+    //ç¬¬äºŒç§éå†æ–¹å¼
     for(vector<int>::iterator it = v.begin(); it != v.end(); it++)
     {
         cout << *it << endl;
     }
     */
-    //µÚÈıÖÖ±éÀú·½Ê½ STLÌá¹©µÄfor_each ËûµÄÍ·ÎÄ¼şÊÇalgorithm
+    //ç¬¬ä¸‰ç§éå†æ–¹å¼ STLæä¾›çš„for_each ä»–çš„å¤´æ–‡ä»¶æ˜¯algorithm
     for_each(v.begin(), v.end(), myprint);
 
 }
@@ -118,7 +118,7 @@ void test02()
 
     for(vector<Person>::iterator it = vp.begin(); it != vp.end(); it++)
     {
-        cout << "ĞÕÃû£º " << it->myname << " ÄêÁä£º" << it -> myage << endl;;
+        cout << "å§“åï¼š " << it->myname << " å¹´é¾„ï¼š" << it -> myage << endl;;
     }
 
 }
@@ -137,12 +137,12 @@ void test03()
 
     for(vector<Person*>::iterator it = vp.begin(); it != vp.end(); it++)
     {
-        cout << "ĞÕÃû£º " << (*it)->myname << " ÄêÁä£º" << (*it) -> myage << endl;;
+        cout << "å§“åï¼š " << (*it)->myname << " å¹´é¾„ï¼š" << (*it) -> myage << endl;;
     }
 
 }
 
-//ÈİÆ÷Ç¶Ì×ÈİÆ÷
+//å®¹å™¨åµŒå¥—å®¹å™¨
 void test04()
 {
     vector<vector<int>> v;
@@ -152,7 +152,7 @@ void test04()
     vector<int> v3;
     vector<int> v4;
 
-    //Ğ¡ÈİÆ÷ÖĞ²åÈëÊı¾İ
+    //å°å®¹å™¨ä¸­æ’å…¥æ•°æ®
     for(int i = 0; i < 4; i++)
     {
         v1.push_back(i);
@@ -161,22 +161,22 @@ void test04()
         v4.push_back(i+3);
     }
 
-    //Ïò´óÈİÆ÷ÖĞ²åÈëĞ¡ÈİÆ÷
+    //å‘å¤§å®¹å™¨ä¸­æ’å…¥å°å®¹å™¨
     v.push_back(v1);
     v.push_back(v2);
     v.push_back(v3);
     v.push_back(v4);
 
-    //Í¨¹ı´óÈİÆ÷±éÀú
+    //é€šè¿‡å¤§å®¹å™¨éå†
     for(vector<vector<int>>::iterator it = v.begin(); it != v.end(); it++)
     {
-        //(*it)----±¾Ê¡ÊÇÒ»¸öĞ¡ÈİÆ÷
+        //(*it)----æœ¬çœæ˜¯ä¸€ä¸ªå°å®¹å™¨
         for(vector<int>::iterator vit = (*it).begin(); vit != (*it).end(); vit++)
         {
             cout << "<" << *vit << "> ";
         }
         cout << endl;
-    }//*vitÊÇintÀàĞÍµÄ
+    }//*vitæ˜¯intç±»å‹çš„
 
 }
 

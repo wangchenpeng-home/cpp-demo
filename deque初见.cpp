@@ -2,25 +2,25 @@
 using namespace std;
 
 /*
-¸³Öµ²Ù×÷Í¬vectorÒ»Ñù
-´óĞ¡²Ù×÷Ò»Ñù£¬µ«ÊÇÃ»ÓĞÈİÁ¿
-²åÈëÉ¾³ı²Ù×÷
-    1.Í·²åÍ·É¾
+èµ‹å€¼æ“ä½œåŒvectorä¸€æ ·
+å¤§å°æ“ä½œä¸€æ ·ï¼Œä½†æ˜¯æ²¡æœ‰å®¹é‡
+æ’å…¥åˆ é™¤æ“ä½œ
+    1.å¤´æ’å¤´åˆ 
         push_front();
         pop_front();
-    2.Î²°Í
+    2.å°¾å·´
         push_back();
         pop_back();
-    3.insert,erase,clear²Ù×÷¶¼ÓëvectorÒ»Ñù
-Êı¾İ´æÈ¡
+    3.insert,erase,clearæ“ä½œéƒ½ä¸vectorä¸€æ ·
+æ•°æ®å­˜å–
     deque<int> dq;
-    dq.at();  dq[i]; dq.front()//µÚÒ»¸öÔªËØ; de.end()//×îºóÒ»¸öÔªËØ;
-dequeµÄÅÅĞò
-    sort(iterator begin, iterator end);//vectorÒ²¿ÉÒÔÓÃ
+    dq.at();  dq[i]; dq.front()//ç¬¬ä¸€ä¸ªå…ƒç´ ; de.end()//æœ€åä¸€ä¸ªå…ƒç´ ;
+dequeçš„æ’åº
+    sort(iterator begin, iterator end);//vectorä¹Ÿå¯ä»¥ç”¨
 */
 void myprint(const deque<int> &d)
 {
-    for(deque<int>::const_iterator it = d.begin(); it != d.end(); it++)//Ö»¶Á
+    for(deque<int>::const_iterator it = d.begin(); it != d.end(); it++)//åªè¯»
     {
         cout << *it << " ";
     }
@@ -29,7 +29,7 @@ void myprint(const deque<int> &d)
 
 void test01()
 {
-    //¹¹Ôìdeque
+    //æ„é€ deque
     deque<int> dq;
 
     for(int i = 0; i < 10; i++)

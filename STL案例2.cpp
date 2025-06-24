@@ -6,11 +6,11 @@ using namespace std;
 #include<ctime>
 
 /*
-- ¹«Ë¾½ñÌìÕĞÆ¸ÁË10¸öÔ±¹¤£¨ABCDEFGHIJ£©£¬10ÃûÔ±¹¤½øÈë¹«Ë¾Ö®ºó£¬ĞèÒªÖ¸ÅÉÔ±¹¤ÔÚÄÇ¸ö²¿ÃÅ¹¤×÷
-- Ô±¹¤ĞÅÏ¢ÓĞ: ĞÕÃû  ¹¤×Ê×é³É£»²¿ÃÅ·ÖÎª£º²ß»®¡¢ÃÀÊõ¡¢ÑĞ·¢
-- Ëæ»ú¸ø10ÃûÔ±¹¤·ÖÅä²¿ÃÅºÍ¹¤×Ê
-- Í¨¹ımultimap½øĞĞĞÅÏ¢µÄ²åÈë  key(²¿ÃÅ±àºÅ) value(Ô±¹¤)
-- ·Ö²¿ÃÅÏÔÊ¾Ô±¹¤ĞÅÏ¢
+- å…¬å¸ä»Šå¤©æ‹›è˜äº†10ä¸ªå‘˜å·¥ï¼ˆABCDEFGHIJï¼‰ï¼Œ10åå‘˜å·¥è¿›å…¥å…¬å¸ä¹‹åï¼Œéœ€è¦æŒ‡æ´¾å‘˜å·¥åœ¨é‚£ä¸ªéƒ¨é—¨å·¥ä½œ
+- å‘˜å·¥ä¿¡æ¯æœ‰: å§“å  å·¥èµ„ç»„æˆï¼›éƒ¨é—¨åˆ†ä¸ºï¼šç­–åˆ’ã€ç¾æœ¯ã€ç ”å‘
+- éšæœºç»™10åå‘˜å·¥åˆ†é…éƒ¨é—¨å’Œå·¥èµ„
+- é€šè¿‡multimapè¿›è¡Œä¿¡æ¯çš„æ’å…¥  key(éƒ¨é—¨ç¼–å·) value(å‘˜å·¥)
+- åˆ†éƒ¨é—¨æ˜¾ç¤ºå‘˜å·¥ä¿¡æ¯
 */
 
 #define CEHUA  0
@@ -35,7 +35,7 @@ void createWorker(vector<Worker> &w)
     string str = "ABCDEFGHIJ";
     for(int i = 0; i < 10; i++)
     {
-        string name = "Ô±¹¤";
+        string name = "å‘˜å·¥";
         name += str[i];
         Worker worker(name, rand() % 10000 + 10000);
         w.push_back(worker);
@@ -46,63 +46,63 @@ void setGroup(vector<Worker>&vWorker, multimap<int, Worker>&mWorker)
 {
 	for (vector<Worker>::iterator it = vWorker.begin(); it != vWorker.end(); it++)
 	{
-		//²úÉúËæ»ú²¿ÃÅ±àºÅ
+		//äº§ç”Ÿéšæœºéƒ¨é—¨ç¼–å·
 		int deptId = rand() % 3; // 0 1 2
 
-		//½«Ô±¹¤²åÈëµ½·Ö×éÖĞ
-		//key²¿ÃÅ±àºÅ£¬value¾ßÌåÔ±¹¤
+		//å°†å‘˜å·¥æ’å…¥åˆ°åˆ†ç»„ä¸­
+		//keyéƒ¨é—¨ç¼–å·ï¼Œvalueå…·ä½“å‘˜å·¥
 		mWorker.insert(make_pair(deptId, *it));
 	}
 }
 
 void showWorkerByGourp(multimap<int,Worker>&m)
 {
-	cout << "²ß»®²¿ÃÅ£º" << endl;
+	cout << "ç­–åˆ’éƒ¨é—¨ï¼š" << endl;
 
 	multimap<int,Worker>::iterator pos = m.find(CEHUA);
-	int count = m.count(CEHUA); // Í³¼Æ¾ßÌåÈËÊı
+	int count = m.count(CEHUA); // ç»Ÿè®¡å…·ä½“äººæ•°
 	int index = 0;
 	for (; pos != m.end() && index < count; pos++ , index++)
 	{
-		cout << "ĞÕÃû£º " << pos->second.m_name << " ¹¤×Ê£º " << pos->second.m_salary << endl;
+		cout << "å§“åï¼š " << pos->second.m_name << " å·¥èµ„ï¼š " << pos->second.m_salary << endl;
 	}
 
 	cout << "----------------------" << endl;
-	cout << "ÃÀÊõ²¿ÃÅ£º " << endl;
+	cout << "ç¾æœ¯éƒ¨é—¨ï¼š " << endl;
 	pos = m.find(MEISHU);
-	count = m.count(MEISHU); // Í³¼Æ¾ßÌåÈËÊı
+	count = m.count(MEISHU); // ç»Ÿè®¡å…·ä½“äººæ•°
 	index = 0;
 	for (; pos != m.end() && index < count; pos++, index++)
 	{
-		cout << "ĞÕÃû£º " << pos->second.m_name << " ¹¤×Ê£º " << pos->second.m_salary << endl;
+		cout << "å§“åï¼š " << pos->second.m_name << " å·¥èµ„ï¼š " << pos->second.m_salary << endl;
 	}
 
 	cout << "----------------------" << endl;
-	cout << "ÑĞ·¢²¿ÃÅ£º " << endl;
+	cout << "ç ”å‘éƒ¨é—¨ï¼š " << endl;
 	pos = m.find(YANFA);
-	count = m.count(YANFA); // Í³¼Æ¾ßÌåÈËÊı
+	count = m.count(YANFA); // ç»Ÿè®¡å…·ä½“äººæ•°
 	index = 0;
 	for (; pos != m.end() && index < count; pos++, index++)
 	{
-		cout << "ĞÕÃû£º " << pos->second.m_name << " ¹¤×Ê£º " << pos->second.m_salary << endl;
+		cout << "å§“åï¼š " << pos->second.m_name << " å·¥èµ„ï¼š " << pos->second.m_salary << endl;
 	}
 
 }
 
 int main(void)
 {
-    //Ëæ»úÖÖ×Ó£¬Ã¿´ÎÔËĞĞ¶¼²»Ò»Ñù
+    //éšæœºç§å­ï¼Œæ¯æ¬¡è¿è¡Œéƒ½ä¸ä¸€æ ·
     srand((unsigned int)time(NULL));
 
-    //1¡¢´´½¨Ô±¹¤
+    //1ã€åˆ›å»ºå‘˜å·¥
     vector<Worker>vWorker;
 	createWorker(vWorker);
 
-    //2¡¢Ô±¹¤·Ö×é
+    //2ã€å‘˜å·¥åˆ†ç»„
 	multimap<int, Worker>mWorker;
 	setGroup(vWorker, mWorker);
 
-    //3¡¢·Ö×éÏÔÊ¾Ô±¹¤
+    //3ã€åˆ†ç»„æ˜¾ç¤ºå‘˜å·¥
     showWorkerByGourp(mWorker);
 
     return 0;

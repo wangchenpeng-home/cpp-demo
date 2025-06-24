@@ -2,7 +2,7 @@
 using namespace std;
 #include<vector>
 #include<algorithm>
-//һԪν��
+//一元谓词
 class Compare1
 {
 public:
@@ -11,7 +11,7 @@ public:
         return val1 > 20;
     }
 };
-//��Ԫν��
+//二元谓词
 class Compare2
 {
 public:

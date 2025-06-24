@@ -1,35 +1,35 @@
 #include<iostream>
 using namespace std;
-#include<set>//°´ÕÕ¶ş²æÊ÷½øĞĞ²åÈë
+#include<set>//æŒ‰ç…§äºŒå‰æ ‘è¿›è¡Œæ’å…¥
 
 /*
-set´óĞ¡ºÍ½»»»
+setå¤§å°å’Œäº¤æ¢
 size();
 empty();
 swap(set<auto> S);
-set²åÈëÉ¾³ı
+setæ’å…¥åˆ é™¤
 insert();
 clear();
-erase(pos);°´Î»ÖÃÉ¾³ı
-erase(begin, end);°´ÕÕÇø¼äÉ¾³ı
-erase(elem);//°´ÖµÉ¾³ı
-set²éÕÒºÍÍ³¼Æ
-find(val);//³É¹¦Ê±·µ»Øposµü´úÆ÷,Ê§°ÜÊ±·µ»Øend();
-count(val);//Ö»ÓĞ0»ò1
-setºÍmultisetµÄÇø±ğ
-1.set²»¿ÉÒÔ²åÈëÖØ¸´Êı¾İmultiset¿ÉÒÔ
-2.set²åÈëÊı¾İÊ±»á·µ»Ø²åÈë½á¹û£¬±íÊ¾³É¹¦£¬
-    ·µ»ØµÄÊÇpair<set<elemtype>::iterator pos, bool>ÀàĞÍ
-3.mnultiset²»»á¼ì²âÊı¾İ£¬ËùÒÔ¿ÉÒÔÖØ¸´²åÈë
+erase(pos);æŒ‰ä½ç½®åˆ é™¤
+erase(begin, end);æŒ‰ç…§åŒºé—´åˆ é™¤
+erase(elem);//æŒ‰å€¼åˆ é™¤
+setæŸ¥æ‰¾å’Œç»Ÿè®¡
+find(val);//æˆåŠŸæ—¶è¿”å›posè¿­ä»£å™¨,å¤±è´¥æ—¶è¿”å›end();
+count(val);//åªæœ‰0æˆ–1
+setå’Œmultisetçš„åŒºåˆ«
+1.setä¸å¯ä»¥æ’å…¥é‡å¤æ•°æ®multisetå¯ä»¥
+2.setæ’å…¥æ•°æ®æ—¶ä¼šè¿”å›æ’å…¥ç»“æœï¼Œè¡¨ç¤ºæˆåŠŸï¼Œ
+    è¿”å›çš„æ˜¯pair<set<elemtype>::iterator pos, bool>ç±»å‹
+3.mnultisetä¸ä¼šæ£€æµ‹æ•°æ®ï¼Œæ‰€ä»¥å¯ä»¥é‡å¤æ’å…¥
 
-pair¶Ô×éµÄ´´½¨
+pairå¯¹ç»„çš„åˆ›å»º
 1.pair<type, type> p (value1, value2);
 2.pair<type, type> p = make_pair(value1, value2);
 
-·ÃÎÊÊ±ÓÃp.firstºÍp.second¶ÁÈ¡
+è®¿é—®æ—¶ç”¨p.firstå’Œp.secondè¯»å–
 
-setµÄÈİÆ÷ÅÅĞò£¬¸Ä±äË³ĞòÎªÓÉ´óµ½Ğ¡
-1.¶ÔÓÚÄÚÖÃÊı¾İÀàĞÍ--Í¨¹ı·Âº¯Êı-ÖØÔØ();
+setçš„å®¹å™¨æ’åºï¼Œæ”¹å˜é¡ºåºä¸ºç”±å¤§åˆ°å°
+1.å¯¹äºå†…ç½®æ•°æ®ç±»å‹--é€šè¿‡ä»¿å‡½æ•°-é‡è½½();
 class Compare
 {
 public:
@@ -38,7 +38,7 @@ public:
         return v1 > v2;
     }
 }
-¹¹ÔìÊ±Ó¦ÓÃset<int, Compare> S£»
+æ„é€ æ—¶åº”ç”¨set<int, Compare> Sï¼›
 */
 
 
@@ -55,7 +55,7 @@ void test()
 {
     set<int> S;
 
-    //set²åÈëÊı¾İÖ»ÓĞinsert
+    //setæ’å…¥æ•°æ®åªæœ‰insert
     S.insert(2);
     S.insert(5);
     S.insert(1);
@@ -64,10 +64,10 @@ void test()
 
     printSet(S);
 
-    cout << "ÔÙ´Î²åÈëÒ»¸ö4ºó\n";
+    cout << "å†æ¬¡æ’å…¥ä¸€ä¸ª4å\n";
     S.insert(4);
     printSet(S);
-    //set²åÈëÊ±×Ô¶¯ÅÅĞò£¬¶øÇÒÃ»ÓĞÖØ¸´ÔªËØ
+    //setæ’å…¥æ—¶è‡ªåŠ¨æ’åºï¼Œè€Œä¸”æ²¡æœ‰é‡å¤å…ƒç´ 
     cout << "S2's  value:\n";
     set<int> S2(S);
     printSet(S2);

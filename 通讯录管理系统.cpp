@@ -5,13 +5,13 @@ using namespace std;
 void ShowMenu()
 {
     cout << "*************************" << endl;
-    cout << "***** 1¡¢Ìí¼ÓÁªÏµÈË *****" << endl;
-    cout << "***** 2¡¢ÏÔÊ¾ÁªÏµÈË *****" << endl;
-    cout << "***** 3¡¢É¾³ıÁªÏµÈË *****" << endl;
-    cout << "***** 4¡¢²éÕÒÁªÏµÈË *****" << endl;
-    cout << "***** 5¡¢ĞŞ¸ÄÁªÏµÈË *****" << endl;
-    cout << "***** 6¡¢Çå¿ÕÁªÏµÈË *****" << endl;
-    cout << "***** 0¡¢ÍÆ³öÍ¨Ñ¶Â¼ *****" << endl;
+    cout << "***** 1ã€æ·»åŠ è”ç³»äºº *****" << endl;
+    cout << "***** 2ã€æ˜¾ç¤ºè”ç³»äºº *****" << endl;
+    cout << "***** 3ã€åˆ é™¤è”ç³»äºº *****" << endl;
+    cout << "***** 4ã€æŸ¥æ‰¾è”ç³»äºº *****" << endl;
+    cout << "***** 5ã€ä¿®æ”¹è”ç³»äºº *****" << endl;
+    cout << "***** 6ã€æ¸…ç©ºè”ç³»äºº *****" << endl;
+    cout << "***** 0ã€æ¨å‡ºé€šè®¯å½• *****" << endl;
     cout << "*************************" << endl;
 }
 
@@ -25,32 +25,32 @@ struct contact
 struct contacts
 {
     contact contacts[MAX];
-    int number;//Í¨Ñ¶Â¼ÈËÊı
+    int number;//é€šè®¯å½•äººæ•°
 };
 
 void addContact(contacts &person)
 {
     if(person.number == MAX)
     {
-        cout << "Í¨Ñ¶Â¼ÒÑÂú,ÎŞ·¨Ìí¼Ó¡£\n";
+        cout << "é€šè®¯å½•å·²æ»¡,æ— æ³•æ·»åŠ ã€‚\n";
     }
     else
     {
-        //Ìí¼ÓĞÕÃû
+        //æ·»åŠ å§“å
         string addname;
-        cout << "ÇëÊäÈëĞÕÃû£º";
+        cout << "è¯·è¾“å…¥å§“åï¼š";
         cin >> addname;
         person.contacts[person.number].name = addname;
-        //Ìí¼Óµç»°ºÅÂë
+        //æ·»åŠ ç”µè¯å·ç 
         string phone;
-        cout << "ÇëÊäÈëµç»°ºÅÂë£º";
+        cout << "è¯·è¾“å…¥ç”µè¯å·ç ï¼š";
         cin >> phone;
         person.contacts[person.number].phonenumber = phone;
-        //Ìí¼ÓĞÔ±ğ
+        //æ·»åŠ æ€§åˆ«
         int sex;
         while(true)
         {
-            cout << "ÇëÊäÈëĞÔ±ğ£¨ÄĞ1orÅ®0£©:";
+            cout << "è¯·è¾“å…¥æ€§åˆ«ï¼ˆç”·1orå¥³0ï¼‰:";
             cin >> sex;
             if(sex == 1 || sex == 0)
             {
@@ -58,7 +58,7 @@ void addContact(contacts &person)
                 break;
             }
             else
-                cout << "ÇëÊäÈëÕıÈ·ĞÔ±ğ£º";
+                cout << "è¯·è¾“å…¥æ­£ç¡®æ€§åˆ«ï¼š";
         }
 
         person.number++;
@@ -69,34 +69,34 @@ void showContact(contacts person)
 {
     if(person.number == 0)
     {
-        cout << "ÁªÏµÈËÎª¿Õ\n";
+        cout << "è”ç³»äººä¸ºç©º\n";
     }
     else
     {
         for(int i = 0; i < person.number; i++)
         {
-            cout << "ĞÕÃû£º " << person.contacts[i].name;
+            cout << "å§“åï¼š " << person.contacts[i].name;
             string p_sex;
             if(person.contacts[i].sex == 1)
             {
-                p_sex = "ÄĞ";
+                p_sex = "ç”·";
             }
             else
             {
-                p_sex = "Å®";
+                p_sex = "å¥³";
             }
-            cout << "     ĞÔ±ğ:  " << p_sex;
+            cout << "     æ€§åˆ«:  " << p_sex;
 
-            cout << "     µç»°:  " << person.contacts[i].phonenumber << endl;
+            cout << "     ç”µè¯:  " << person.contacts[i].phonenumber << endl;
         }
     }
 }
 
-int IsExist(contacts person, string p_name)//ÅĞ¶ÏÁªÏµÈËÊÇ·ñ´æÔÚ
+int IsExist(contacts person, string p_name)//åˆ¤æ–­è”ç³»äººæ˜¯å¦å­˜åœ¨
 {
     if(person.number == 0)
     {
-        cout << "ÁªÏµÈËÎª¿Õ\n";
+        cout << "è”ç³»äººä¸ºç©º\n";
     }
     else
     {
@@ -110,7 +110,7 @@ int IsExist(contacts person, string p_name)//ÅĞ¶ÏÁªÏµÈËÊÇ·ñ´æÔÚ
     return -1;
 }
 
-void DeleteContact(contacts &person)//É¾³ıÁªÏµÈË
+void DeleteContact(contacts &person)//åˆ é™¤è”ç³»äºº
 {
     cout << "Pleas input a contact name you want to delete : \n";
     string p_name;
@@ -122,17 +122,17 @@ void DeleteContact(contacts &person)//É¾³ıÁªÏµÈË
         {
             person.contacts[ret] = person.contacts[ret+1];
             person.number--;
-            cout << "É¾³ı³É¹¦£¡\n";
+            cout << "åˆ é™¤æˆåŠŸï¼\n";
         }
     }
     else
     {
-        cout << "²éÎŞ´ËÈË£¡\nÉ¾³ıÊ§°Ü£¡\n";
+        cout << "æŸ¥æ— æ­¤äººï¼\nåˆ é™¤å¤±è´¥ï¼\n";
     }
 
 }
 
-void FindContact(contacts person)//²éÕÒ
+void FindContact(contacts person)//æŸ¥æ‰¾
 {
     cout << "Pleas input a contact name you want to find : \n";
     string p_name;
@@ -140,26 +140,26 @@ void FindContact(contacts person)//²éÕÒ
     int ret = IsExist(person, p_name);
     if(ret != -1)
     {
-        cout << "ĞÕÃû £º" << person.contacts[ret].name << endl;
+        cout << "å§“å ï¼š" << person.contacts[ret].name << endl;
         string p_sex;
             if(person.contacts[ret].sex == 1)
             {
-                p_sex = "ÄĞ";
+                p_sex = "ç”·";
             }
             else
             {
-                p_sex = "Å®";
+                p_sex = "å¥³";
             }
-        cout << "     ĞÔ±ğ:  " << p_sex;
-        cout << "µç»° £º" << person.contacts[ret].phonenumber << endl;
+        cout << "     æ€§åˆ«:  " << p_sex;
+        cout << "ç”µè¯ ï¼š" << person.contacts[ret].phonenumber << endl;
     }
     else
     {
-        cout << "²éÎŞ´ËÈË£¡\n²éÕÒÊ§°Ü£¡\n";
+        cout << "æŸ¥æ— æ­¤äººï¼\næŸ¥æ‰¾å¤±è´¥ï¼\n";
     }
 }
 
-void ModifyContact(contacts &person)//ĞŞ¸Ä
+void ModifyContact(contacts &person)//ä¿®æ”¹
 {
     cout << "Pleas input a contact name you want to modify : \n";
     string p_name;
@@ -181,12 +181,12 @@ void ModifyContact(contacts &person)//ĞŞ¸Ä
     }
     else
     {
-        cout << "²éÎŞ´ËÈË!\n";
+        cout << "æŸ¥æ— æ­¤äºº!\n";
     }
 
 }
 
-void ClearContacts(contacts &person)//Çå¿Õ
+void ClearContacts(contacts &person)//æ¸…ç©º
 {
     person.number = 0;
 }
@@ -195,7 +195,7 @@ int main()
 {
     contacts person;
     person.number =0;
-    //³õÊ¼»¯;
+    //åˆå§‹åŒ–;
 
     int slec = 0, slec1 = 0;
 
@@ -207,33 +207,33 @@ int main()
 
         switch(slec)
         {
-        case 1://Ìí¼ÓÁªÏµÈË
+        case 1://æ·»åŠ è”ç³»äºº
             addContact(person);
             break;
-        case 2://ÏÔÊ¾ÁªÏµÈË
+        case 2://æ˜¾ç¤ºè”ç³»äºº
             showContact(person);
             break;
-        case 3://É¾³ıÁªÏµÈË
+        case 3://åˆ é™¤è”ç³»äºº
             DeleteContact(person);
             break;
-        case 4://²éÕÒÁªÏµÈË
+        case 4://æŸ¥æ‰¾è”ç³»äºº
             FindContact(person);
             break;
-        case 5://ĞŞ¸ÄÁªÏµÈË
+        case 5://ä¿®æ”¹è”ç³»äºº
             ModifyContact(person);
             break;
-        case 6://Çå¿ÕÍ¨Ñ¶Â¼
+        case 6://æ¸…ç©ºé€šè®¯å½•
             ClearContacts(person);
             break;
         case 0:
-            cout << "»¶Ó­ÏÂ´ÎÊ¹ÓÃ£¡\n";
+            cout << "æ¬¢è¿ä¸‹æ¬¡ä½¿ç”¨ï¼\n";
             return 0;
             break;
         default:
             break;
         }
 
-        cout << "¼ÌĞøÇë°´1:\n";
+        cout << "ç»§ç»­è¯·æŒ‰1:\n";
 
         cin >> slec1;
 

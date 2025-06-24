@@ -1,9 +1,9 @@
 #include <iostream>
 using namespace std;
 
-//Í¨¹ıÈ«¾Öº¯Êı´òÓ¡ĞÅÏ¢
+//é€šè¿‡å…¨å±€å‡½æ•°æ‰“å°ä¿¡æ¯
 
-//ÀàÍâÊµÏÖĞèÒªÌáÇ°¸æÖª±àÒëÆ÷¸Ãº¯Êı´æÔÚ
+//ç±»å¤–å®ç°éœ€è¦æå‰å‘ŠçŸ¥ç¼–è¯‘å™¨è¯¥å‡½æ•°å­˜åœ¨
 template <class T1, class T2>
 class Person;
 
@@ -11,21 +11,21 @@ class Person;
 template <class T1, class T2>
 void printPerson2(Person<T1, T2> P)
 {
-    cout << "ĞÕÃû£º " << P.my_name << " ÄêÁä£º " << P.my_age << endl;
+    cout << "å§“åï¼š " << P.my_name << " å¹´é¾„ï¼š " << P.my_age << endl;
 }
 
 template<class T1, class T2>
 class Person
 {
-    //È«¾Öº¯Êı ÀàÄÚÊµÏÖ
+    //å…¨å±€å‡½æ•° ç±»å†…å®ç°
     friend void printPerson(Person<T1, T2> P)
     {
-        cout << "ĞÕÃû£º " << P.my_name << " ÄêÁä£º " << P.my_age << endl;
+        cout << "å§“åï¼š " << P.my_name << " å¹´é¾„ï¼š " << P.my_age << endl;
     }
 
-    //È«¾Öº¯Êı ÀàÍâÊµÏÖ
-    //ÀàÍâÊµÏÖ¼Ó¿ÕÄ£°å
-    //ÀàÍâÊµÏÖĞèÒªÈÃ±àÒëÆ÷ÌáÇ°ÖªµÀÓĞÕâ¸öº¯Êı
+    //å…¨å±€å‡½æ•° ç±»å¤–å®ç°
+    //ç±»å¤–å®ç°åŠ ç©ºæ¨¡æ¿
+    //ç±»å¤–å®ç°éœ€è¦è®©ç¼–è¯‘å™¨æå‰çŸ¥é“æœ‰è¿™ä¸ªå‡½æ•°
     friend void printPerson2<>(Person<T1, T2> P);
 
 public:
@@ -43,7 +43,7 @@ private:
 
 };
 
-//È«¾Öº¯ÊıÀàÄÚÊµÏÖ
+//å…¨å±€å‡½æ•°ç±»å†…å®ç°
 void test01()
 {
     Person<string,int> P("Tom", 24);
@@ -52,7 +52,7 @@ void test01()
 }
 
 
-//È«¾Öº¯ÊıÀàÍâÊµÏÖ
+//å…¨å±€å‡½æ•°ç±»å¤–å®ç°
 void test02()
 {
     Person<string,int> P("Tom", 24);

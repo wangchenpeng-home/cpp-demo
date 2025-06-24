@@ -3,25 +3,25 @@ using namespace std;
 #include<map>
 
 /*
-¼ò½é:
-¡¤mapÖĞµÄËùÓĞÔªËØ¶¼ÊÇpair
-¡¤pairÖĞµÚÒ»¸öÔªËØÎªkey(¼üÖµ)£¬Æğµ½Ë÷Òı×÷ÓÃ£¬µÚ¶ş¸öÔªËØÎªvalue(ÊµÖµ)
-¡¤ËùÓĞÔªËØ¶¼»á¸ù¾İÔªËØµÄ¼üÖµ×Ô¶¯ÅÅĞò
-±¾ÖÊ:
-¡¤map/multimapÊôÓÚ¹ØÁªÊ½ÈİÆ÷£¬µ×²ã½á¹¹ÊÇÓÃ¶ş²æÊ÷ÊµÏÖ¡£
-ÓÅµã:
-¡¤¿ÉÒÔ¸ù¾İkeyÖµ¿ìËÙÕÒµ½valueÖµmapºÍmultimap
-Çø±ğ:
-¡¤map²»ÔÊĞíÈİÆ÷ÖĞÓĞÖØ¸´keyÖµÔªËØ. multimapÔÊĞíÈİÆ÷ÖĞÓĞÖØ¸´keyÖµÔªËØ
-mapµÄ´óĞ¡ºÍ½»»»£º
-    size();·µ»ØÈİÆ÷ÖĞÔªËØµÄÊıÄ¿
-    empty();ÅĞ¶ÏÈİÆ÷ÊÇ·ñÎª¿Õ
-    swap(st);½»»»Á½¸ö¼¯ºÏÈİÆ÷
-²éÕÒÉ¾³ı
-    find(key);²éÕÒkeyÊÇ·ñ´æÔÚ,Èô´æÔÚ£¬·µ»Ø¸Ã¼üµÄÔªËØµÄµü´úÆ÷£»Èô²»´æÔÚ£¬·µ»Øset.end();
-    count(key);Í³¼ÆkeyµÄÔªËØ¸öÊı
+ç®€ä»‹:
+Â·mapä¸­çš„æ‰€æœ‰å…ƒç´ éƒ½æ˜¯pair
+Â·pairä¸­ç¬¬ä¸€ä¸ªå…ƒç´ ä¸ºkey(é”®å€¼)ï¼Œèµ·åˆ°ç´¢å¼•ä½œç”¨ï¼Œç¬¬äºŒä¸ªå…ƒç´ ä¸ºvalue(å®å€¼)
+Â·æ‰€æœ‰å…ƒç´ éƒ½ä¼šæ ¹æ®å…ƒç´ çš„é”®å€¼è‡ªåŠ¨æ’åº
+æœ¬è´¨:
+Â·map/multimapå±äºå…³è”å¼å®¹å™¨ï¼Œåº•å±‚ç»“æ„æ˜¯ç”¨äºŒå‰æ ‘å®ç°ã€‚
+ä¼˜ç‚¹:
+Â·å¯ä»¥æ ¹æ®keyå€¼å¿«é€Ÿæ‰¾åˆ°valueå€¼mapå’Œmultimap
+åŒºåˆ«:
+Â·mapä¸å…è®¸å®¹å™¨ä¸­æœ‰é‡å¤keyå€¼å…ƒç´ . multimapå…è®¸å®¹å™¨ä¸­æœ‰é‡å¤keyå€¼å…ƒç´ 
+mapçš„å¤§å°å’Œäº¤æ¢ï¼š
+    size();è¿”å›å®¹å™¨ä¸­å…ƒç´ çš„æ•°ç›®
+    empty();åˆ¤æ–­å®¹å™¨æ˜¯å¦ä¸ºç©º
+    swap(st);äº¤æ¢ä¸¤ä¸ªé›†åˆå®¹å™¨
+æŸ¥æ‰¾åˆ é™¤
+    find(key);æŸ¥æ‰¾keyæ˜¯å¦å­˜åœ¨,è‹¥å­˜åœ¨ï¼Œè¿”å›è¯¥é”®çš„å…ƒç´ çš„è¿­ä»£å™¨ï¼›è‹¥ä¸å­˜åœ¨ï¼Œè¿”å›set.end();
+    count(key);ç»Ÿè®¡keyçš„å…ƒç´ ä¸ªæ•°
 */
-//ÀûÓÃ·Âº¯Êı£¬¿ÉÒÔ¸Ä±äÅÅĞò¹æÔò
+//åˆ©ç”¨ä»¿å‡½æ•°ï¼Œå¯ä»¥æ”¹å˜æ’åºè§„åˆ™
 class MyCompare {
 public:
 	bool operator()(int v1, int v2) {
@@ -42,53 +42,53 @@ void test()
 {
     map<int, string> m;
 
-    m.insert(pair<int, string>(3, "Ğ¡Öí"));
-    m.insert(pair<int, string>(1, "Ğ¡Ã¨"));
-    m.insert(pair<int, string>(2, "Ğ¡¹·"));
+    m.insert(pair<int, string>(3, "å°çŒª"));
+    m.insert(pair<int, string>(1, "å°çŒ«"));
+    m.insert(pair<int, string>(2, "å°ç‹—"));
 
     printMap(m);
 
-    //µÚÒ»ÖÖ²åÈë·½Ê½
-	m.insert(pair<int, string>(6, "Ğ¡Äñ"));
-	//µÚ¶şÖÖ²åÈë·½Ê½
-	m.insert(make_pair(5, "Ğ¡Êó"));
-	//µÚÈıÖÖ²åÈë·½Ê½
-	m.insert(map<int, string>::value_type(4, "Ğ¡Å£"));
-	//µÚËÄÖÖ²åÈë·½Ê½
-	m[7] = "Ğ¡Áú";
+    //ç¬¬ä¸€ç§æ’å…¥æ–¹å¼
+	m.insert(pair<int, string>(6, "å°é¸Ÿ"));
+	//ç¬¬äºŒç§æ’å…¥æ–¹å¼
+	m.insert(make_pair(5, "å°é¼ "));
+	//ç¬¬ä¸‰ç§æ’å…¥æ–¹å¼
+	m.insert(map<int, string>::value_type(4, "å°ç‰›"));
+	//ç¬¬å››ç§æ’å…¥æ–¹å¼
+	m[7] = "å°é¾™";
 
 	printMap(m);
 
-	//É¾³ı
+	//åˆ é™¤
 	m.erase(m.begin());
 	printMap(m);
 
 	m.erase(3);
 	printMap(m);
 
-	//²éÕÒ
+	//æŸ¥æ‰¾
 	map<int, string>::iterator pos = m.find(4);
 	if(pos != m.end())
 	{
-		cout << "ÕÒµ½ÁËÔªËØ key = " << (*pos).first
+		cout << "æ‰¾åˆ°äº†å…ƒç´  key = " << (*pos).first
 		<< " value = " << (*pos).second << endl;
 	}
 	else
 	{
-		cout << "Î´ÕÒµ½ÔªËØ" << endl;
+		cout << "æœªæ‰¾åˆ°å…ƒç´ " << endl;
 	}
 
-	//Í³¼Æ
+	//ç»Ÿè®¡
 	int num = m.count(3);
 	cout << "number of 3 = " << num << endl;
 
-	//Çå¿Õ
+	//æ¸…ç©º
 	m.erase(m.begin(),m.end());
 	m.clear();
 	printMap(m);
 
 
-	//ÄæĞò
+	//é€†åº
 	map<int, int, MyCompare> m1;
 
 	m1.insert(make_pair(1, 10));

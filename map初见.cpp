@@ -24,7 +24,7 @@ map的大小和交换：
 //利用仿函数，可以改变排序规则
 class MyCompare {
 public:
-	bool operator()(int v1, int v2) {
+	bool operator()(int v1, int v2) const {
 		return v1 > v2;
 	}
 };

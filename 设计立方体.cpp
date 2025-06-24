@@ -26,7 +26,7 @@ public:
     void set_MH(double a);
     double get_area();
     double get_volume();
-    const bool IsEqual(Cube &a) const
+    bool IsEqual(Cube &a) const
     {
         if(this->M_H == a.get_H() && M_W == a.get_W() && M_L == a.get_W())
             return true;

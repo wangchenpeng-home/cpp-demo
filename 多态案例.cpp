@@ -16,6 +16,8 @@ public:
         {
             return m_num1 - m_num2;
         }
+
+        return 0;
     }
 
     int m_num1;
@@ -37,6 +39,8 @@ void test01()
 class AbstractCalculator
 {
 public:
+    virtual ~AbstractCalculator() {}
+
     virtual int getresult()
     {
         return 0;
